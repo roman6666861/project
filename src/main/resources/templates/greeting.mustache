@@ -1,10 +1,25 @@
 <!DOCTYPE HTML>
 <html>
-<head>
-    <title>Getting Started: Serving Web Content</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-</head>
 <body>
-<div>Hello, {{name}}</div>
+    <div>
+        <form method="post">
+            <input type="text" name="name" placeholder="Введите имя">
+            <input type="text" name="surname" placeholder="Введите фамилию" >
+            <input type="text" name="age" placeholder="Введите возраст" >
+            <button type="submit">Добавить</button>
+        </form>
+    </div>
+    <form method="post" action="/delete">
+        <input type="text" name="name" placeholder="Введите имя или фамилию">
+        <button type="submit">Удалить</button>
+    </form>
+    <div>Список людей</div>
+    {{#people}}
+        <div>
+            <b>{{name}}</b>
+            <span>{{surname}}</span>
+            <i>{{age}}</i>
+        </div>
+    {{/people}}
 </body>
 </html>
